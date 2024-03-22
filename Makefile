@@ -1,7 +1,7 @@
 default: g510s
 
 g510s.o: g510s.c g510s.h
-	$(CC) $(CFLAGS) -fcommon -Wall `pkg-config --cflags gtk+-3.0 appindicator3-0.1` -c g510s.c -o g510s.o
+	$(CC) $(CFLAGS) -fcommon -Wall `pkg-config --cflags gtk+-3.0` -I/usr/include/libayatana-appindicator3-0.1 -c g510s.c -o g510s.o
 
 g510s-clock.o: g510s-clock.c g510s.h
 	$(CC) $(CFLAGS) -fcommon -Wall -c g510s-clock.c -o g510s-clock.o
@@ -25,10 +25,10 @@ g510s-signals.o: g510s-signals.c g510s.h
 	$(CC) $(CFLAGS) -fcommon -Wall `pkg-config --cflags gtk+-3.0` -c g510s-signals.c -o g510s-signals.o
 
 g510s-threads.o: g510s-threads.c g510s.h
-	$(CC) $(CFLAGS) -fcommon -Wall `pkg-config --cflags appindicator3-0.1` -c g510s-threads.c -o g510s-threads.o
+	$(CC) $(CFLAGS) -fcommon -Wall `pkg-config --cflags gtk+-3.0` -I/usr/include/libayatana-appindicator3-0.1 -c g510s-threads.c -o g510s-threads.o
 
 g510s: g510s.o g510s-clock.o g510s-config.o g510s-keys.o g510s-list.o g510s-misc.o g510s-net.o g510s-signals.o g510s-threads.o
-	$(CC) $(CFLAGS) -fcommon -Wall g510s.o g510s-clock.o g510s-config.o g510s-keys.o g510s-list.o g510s-misc.o g510s-net.o g510s-signals.o g510s-threads.o -o g510s -lg15 -lg15render -lpthread -rdynamic `pkg-config --libs gtk+-3.0 appindicator3-0.1`
+	$(CC) $(CFLAGS) -fcommon -Wall g510s.o g510s-clock.o g510s-config.o g510s-keys.o g510s-list.o g510s-misc.o g510s-net.o g510s-signals.o g510s-threads.o -o g510s -lg15 -lg15render -lpthread -rdynamic `pkg-config --libs gtk+-3.0` -I/usr/include/libayatana-appindicator3-0.1
 
 install:
 	-mkdir /usr/local/share/g510s

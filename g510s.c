@@ -24,7 +24,7 @@
 #include <libg15.h>
 #include <libg15render.h>
 #include <gtk/gtk.h>
-#include <libappindicator/app-indicator.h>
+#include <libayatana-appindicator/app-indicator.h>
 
 #include "g510s.h"
 

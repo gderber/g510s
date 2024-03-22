@@ -27,7 +27,7 @@
 #include <fcntl.h>
 #include <pthread.h>
 #include <libg15.h>
-#include <libappindicator/app-indicator.h>
+#include <libayatana-appindicator/app-indicator.h>
 
 #include "g510s.h"
 
